@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221125759) do
+ActiveRecord::Schema.define(version: 20170221133235) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(version: 20170221125759) do
     t.string   "url"
     t.string   "name"
     t.string   "rss"
-    t.string   "type"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "recent_item_link"
