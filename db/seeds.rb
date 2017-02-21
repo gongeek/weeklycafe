@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Site.create(
+    name: "JavaScript Weekly",
+    url: "http://javascriptweekly.com/",
+    recent_item_link: "http://javascriptweekly.com/issues/322",
+    rss: "http://javascriptweekly.com/rss/10m068ld")
