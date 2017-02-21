@@ -10,20 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170220132245) do
+ActiveRecord::Schema.define(version: 20170221125759) do
 
   create_table "items", force: :cascade do |t|
-    t.string "name"
-    t.string "content"
-    t.string "link"
+    t.string   "name"
+    t.text     "content"
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "site_id"
   end
 
   create_table "sites", force: :cascade do |t|
-    t.string  "url"
-    t.string  "name"
-    t.string  "rss"
-    t.integer "version_id"
-    t.string  "type"
+    t.string   "url"
+    t.string   "name"
+    t.string   "rss"
+    t.string   "type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "recent_item_link"
   end
 
 end
