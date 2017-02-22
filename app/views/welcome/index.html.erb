@@ -1,0 +1,16 @@
+<%= render 'share/menu' %>
+<div class="items-list">
+  <div class="day-time">2月22号</div>
+  <% @items.each do |item| %>
+      <div class="item">
+        <a href="/post/<%= item.id %>">
+          <div class="item-left">访问量</div>
+          <div class="item-center">
+            <h2 class="site-name">weekly</h2>
+            <p class="item-name"><%= item.name %></p>
+          </div>
+          <div class="item-right">赞</div>
+        </a>
+      </div>
+  <% end %>
+</div>

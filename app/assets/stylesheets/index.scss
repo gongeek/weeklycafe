@@ -1,0 +1,55 @@
+@import "mixin";
+
+.top-bar {
+  background: $themeColor;
+  text-align: center;
+  h1 {
+    height: 50px;
+    margin: 0;
+    line-height: 50px;
+    font-size: 20px;
+    a {
+      color: #ffffff;
+    }
+  }
+}
+
+.menu-bar {
+  height: 50px;
+  box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 -1px 0 0 rgba(0, 0, 0, 0.1);
+  .menu-bar-content {
+    width: 920px;
+    margin: 0 auto;
+    ul {
+      @include clearfix;
+      display: inline-block;
+      li {
+        float: left;
+        height: 46px;
+        line-height: 50px;
+        padding: 0 20px;
+        color: $themeColor;
+        &:hover {
+          background-color: #F4FCFD;
+          border-bottom: solid 3px #F4FCFD;
+        }
+        a {
+          color: #999;
+        }
+      }
+      li.active {
+        background-color: #F4FCFD;
+        border-bottom: solid 3px $themeColor;
+      }
+    }
+    .add-rss {
+      float: right;
+      line-height: 49px;
+      color: #999999;
+      background: #F4FCFD;
+      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 0 20px;
+    }
+  }
+}
