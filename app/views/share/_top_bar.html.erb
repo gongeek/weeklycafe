@@ -1,3 +1,8 @@
 <div class="top-bar">
-  <h1><a href="/">WEEKLY CAFE</a></h1>
+  <h1>
+    <% if controller_name=='post' %>
+        <a href="/" class="back">< 返回</a>
+    <% end %>
+    <a href="/" class="logo">WEEKLY <span class="iconfont">&#xe631;</span></a>
+  </h1>
 </div>

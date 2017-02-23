@@ -1,16 +1,70 @@
 @import "mixin";
 
+body {
+  font-family: "Avenir Next", Avenir, "Helvetica Neue", Helvetica, "Nimbus Sans L", Arial, "Liberation Sans", "PingFang SC", "Hiragino Sans GB", "Source Han Sans CN", "Source Han Sans SC", "Microsoft YaHei", "Wenquanyi Micro Hei", "WenQuanYi Zen Hei", "ST Heiti", SimHei, "WenQuanYi Zen Hei Sharp", sans-serif;
+}
+
+@font-face {
+  font-family: 'iconfont';  /* project id 238639 */
+  src: url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.eot');
+  src: url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.svg#iconfont') format('svg');
+}
+
+@mixin dayE {
+  float: left;
+  padding: 2px 0;
+  width: 34px;
+  height: 44px;
+  background: #948CF1;
+  text-align: center;
+  .month {
+    font-size: 12px;
+    color: #ffffff;
+  }
+  .day {
+    font-size: 16px;
+    color: #ffffff;
+  }
+}
+
+.iconfont {
+  font-family: iconfont, serif;
+  font-style: normal;
+}
+
 .top-bar {
   background: $themeColor;
   text-align: center;
   h1 {
+    position: relative;
+    width: 920px;
     height: 50px;
-    margin: 0;
+    margin: 0 auto;
     line-height: 50px;
-    font-size: 20px;
-    a {
-      color: #ffffff;
+    span {
+      position: relative;
+      bottom: 2px;
     }
+    a.logo {
+      color: #ffffff;
+      font-size: 20px;
+    }
+    a.back {
+      display: block;
+      position: absolute;
+      left: 0;
+      float: left;
+      width: 55px;
+      height: 50px;
+      line-height: 50px;
+      color: #FFF;
+      font-size: 16px;
+      font-weight: normal;
+    }
+
   }
 }
 
@@ -51,5 +105,97 @@
       border-right: 1px solid rgba(0, 0, 0, 0.1);
       padding: 0 20px;
     }
+  }
+}
+
+.items-list {
+  .item {
+    display: block;
+    width: 900px;
+    height: 46px;
+    margin: 0 auto;
+    padding: 15px 10px;
+    @include clearfix;
+    &:hover {
+      background: rgba(225, 227, 230, 0.4);
+    }
+    h2 {
+      margin: 0;
+      font-size: 16px;
+      font-weight: 600;
+      color: $themeColor;
+    }
+    p {
+      margin: 0;
+    }
+  }
+  .item-left {
+    float: left;
+    width: 34px;
+    height: 34px;
+    margin-right: 18px;
+    border: 1px solid #E0E3E6;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 5px 0;
+    line-height: 1;
+    i {
+      color: #ADB3B9;
+    }
+    span {
+      font-size: 12px;
+      color: #ADB3B9;
+    }
+  }
+  .item-center {
+    float: left;
+  }
+  .item-right {
+    float: right;
+    i {
+      font-size: 20px;
+      color: #ADB3B9;
+    }
+  }
+}
+
+.day-time {
+  width: 900px;
+  height: 54px;
+  padding: 10px 0;
+  margin: 0 auto 20px auto;
+  @include clearfix;
+  i {
+    font-style: normal;
+  }
+  .left {
+    @include dayE;
+  }
+  .right {
+    float: left;
+    margin-left: 16px;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 54px;
+  }
+}
+
+.post-page {
+  width: 920px;
+  padding: 10px 0;
+  margin: 60px auto;
+  @include clearfix;
+  .left {
+    width: 145px;
+    padding-left: 48px;
+    float: left;
+    border-right: 1px solid #F0EFEF;
+    .top {
+      @include dayE;
+    }
+  }
+  .right {
+    float: right;
+    width: 760px;
   }
 }
