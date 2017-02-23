@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170221133235) do
+ActiveRecord::Schema.define(version: 20170223023445) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170221133235) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "site_id"
+    t.integer  "access_num"
   end
 
   create_table "sites", force: :cascade do |t|
@@ -28,6 +29,20 @@ ActiveRecord::Schema.define(version: 20170221133235) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "recent_item_link"
+  end
+
+  create_table "user_sites", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "site_id"
+    t.index ["site_id"], name: "index_user_sites_on_site_id"
+    t.index ["user_id"], name: "index_user_sites_on_user_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "email"
+    t.string "desc"
+    t.string "icon"
   end
 
 end
