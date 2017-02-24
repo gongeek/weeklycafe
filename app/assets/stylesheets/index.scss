@@ -6,11 +6,11 @@ body {
 
 @font-face {
   font-family: 'iconfont';  /* project id 238639 */
-  src: url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.eot');
-  src: url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.woff') format('woff'),
-  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_vhc8oyar2gzm2t9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.eot');
+  src: url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.svg#iconfont') format('svg');
 }
 
 @mixin dayE {
@@ -36,6 +36,7 @@ body {
 }
 
 .top-bar {
+  position: relative;
   background: $themeColor;
   text-align: center;
   h1 {
@@ -51,6 +52,9 @@ body {
     a.logo {
       color: #ffffff;
       font-size: 20px;
+      .iconfont {
+        font-size: 24px;
+      }
     }
     a.back {
       display: block;
@@ -64,7 +68,24 @@ body {
       font-size: 16px;
       font-weight: normal;
     }
-
+  }
+  .github-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: #fff;
+    height: 30px;
+    width: 65px;
+    background: #000;
+    line-height: 30px;
+    background: linear-gradient(#4f5151, #474949 6%, #3f4141);
+    background-repeat: no-repeat;
+    border-radius: 6px;
+    font-size: 14px;
+    .iconfont {
+      font-size: 18px;
+      margin-right: 5px;
+    }
   }
 }
 
@@ -190,9 +211,6 @@ body {
     padding-left: 48px;
     float: left;
     border-right: 1px solid #F0EFEF;
-    .top {
-      @include dayE;
-    }
   }
   .right {
     float: right;
