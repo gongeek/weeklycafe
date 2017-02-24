@@ -4,4 +4,6 @@ Rails.application.routes.draw do
   get 'post/:id' => 'post#show'
   get 'login/github'=>'user#login'
   get 'login/github/callback'=>'user#login_callback'
+  get '/site', to: 'site#index'
+  post '/site/create',to: 'site#create'
 end

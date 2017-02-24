@@ -1,0 +1,19 @@
+<%= render 'share/menu' %>
+<div class="form">
+  <%= form_for(:rss, url: site_create_path) do |f| %>
+      <%= f.label :rss %>
+      <%= f.email_field :rss, class: 'form-control' %>
+
+      <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+</div>
+
+<div class="items-list">
+  <% @sites.each do |site| %>
+      <a class="item" href="<%= site.url %>">
+        <div class="item-center">
+          <p class="item-name"><%= site.name %></p>
+        </div>
+      </a>
+  <% end %>
+</div>
