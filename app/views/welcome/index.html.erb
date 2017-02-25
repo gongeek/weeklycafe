@@ -1,26 +1,28 @@
 <%= render 'share/menu' %>
 <div class="items-list">
-  <div class="day-time">
-    <div class="left">
-      <i class="month">FEB</i>
-      <span class="day">23</span>
-    </div>
-    <div class="right">2月23日</div>
-  </div>
-  <% @items.each do |item| %>
-      <a class="item" href="/post/<%= item.id %>">
-        <div class="item-left">
-          <i class="iconfont">&#xe637;</i>
-          <span>123</span>
+  <% @items_group.each do |group| %>
+      <div class="day-time">
+        <div class="left">
+          <i class="month">FEB</i>
+          <span class="day">23</span>
         </div>
-        <div class="item-center">
-          <h2 class="site-name">weekly</h2>
-          <p class="item-name"><%= item.name %></p>
-        </div>
-        <div class="item-right">
-          <i class="iconfont">&#xe65b;</i>
-          <span>12</span>
-        </div>
-      </a>
+        <div class="right"><%= group[:day] %></div>
+      </div>
+      <% group[:items].each do |item| %>
+          <a class="item" href="/post/<%= item.id %>">
+            <div class="item-left">
+              <i class="iconfont">&#xe637;</i>
+              <span>123</span>
+            </div>
+            <div class="item-center">
+              <h2 class="site-name"><%= item.site.name %></h2>
+              <p class="item-name"><%= item.name %></p>
+            </div>
+            <div class="item-right">
+              <i class="iconfont">&#xe65b;</i>
+              <span>12</span>
+            </div>
+          </a>
+      <% end %>
   <% end %>
 </div>

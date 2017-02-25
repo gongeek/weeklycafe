@@ -8,4 +8,6 @@ class UserSite < ApplicationRecord
       user_item.save
     end
   end
+
+
 end
