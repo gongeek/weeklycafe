@@ -25,8 +25,7 @@ class UserController < ApplicationController
     if user_info
       user=User.find_by_origin_id(user_info['id'])
       unless user
-        user=User.new(:origin_id => user_info['id'], :username => user_info['name'], :email => user_info['email'], :icon => user_info['avatar_url'])
-        user.save
+        user=User.new_and_save(:origin_id => user_info['id'], :username => user_info['name'], :email => user_info['email'], :icon => user_info['avatar_url'])
       end
       session[:user_id]=user.id
       redirect_to session[:referrer]
