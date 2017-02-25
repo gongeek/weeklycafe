@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get 'login/github' => 'user#login'
   get 'login/github/callback' => 'user#login_callback'
   get 'logout' => 'session#destroy'
+  post '/site/create', to: 'site#create'
+  get '/site', to: 'site#index'
 end
