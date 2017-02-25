@@ -2,7 +2,7 @@
 <div class="form">
   <%= form_for(:rss, url: site_create_path) do |f| %>
       <%= f.label :rss %>
-      <%= f.email_field :rss, class: 'form-control' %>
+      <%= f.text_field :rss, class: 'form-control' %>
 
       <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
