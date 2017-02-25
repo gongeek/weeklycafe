@@ -1408,4 +1408,4 @@
 
 // Potentially window is not defined yet, so bind to 'this' instead
 }(typeof window !== 'undefined' ? window : this));
-// End Wrapper
+app = Box.Application;
