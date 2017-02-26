@@ -17,6 +17,6 @@
 //= require_tree .
 $(document).ready(function () {
     app.init({
-        // debug: true
+        debug: true
     });
 });

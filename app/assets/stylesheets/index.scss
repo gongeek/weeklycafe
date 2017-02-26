@@ -217,3 +217,15 @@ body {
     width: 760px;
   }
 }
+
+.more-btn {
+  width: 115px;
+  height: 30px;
+  line-height: 30px;
+  margin: 60px auto;
+  border-radius: 50px;
+  text-align: center;
+  color: $themeColor;
+  border: 1px solid $themeColor;
+  cursor: pointer;
+}

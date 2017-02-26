@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'logout' => 'session#destroy'
   post '/site/create', to: 'site#create'
   get '/site', to: 'site#index'
+  get '/items/add' => 'welcome#add'
 end
