@@ -1,0 +1,37 @@
+<div class="post-page">
+  <div class="left-slide">
+    <div class="top">
+      <div class="day-time">
+        <div class="e-day">
+          <i class="month">FEB</i>
+          <span class="day">23</span>
+        </div>
+        <div class="s-day">2月23日</div>
+      </div>
+    </div>
+
+    <div class="recent-items">
+      <ul>
+        <% @recent_items.each do |item| %>
+            <li><a href="/item/<%= item.id %>"><%= item.name %></a></li>
+        <% end %>
+      </ul>
+      <a href="/site/<%= @item.site_id %>">view all</a>
+    </div>
+  </div>
+  <div class="right-content">
+    <!--<div class="top">-->
+    <!--<div class="weekly-hot">-->
+    <!--<i class="iconfont">&#xe637;</i>-->
+    <!--<span>123</span>-->
+    <!--</div>-->
+    <!--<div class="weekly-title">-->
+    <!--<h2 class="site-name"><%= @item.site.name %></h2>-->
+    <!--<p class="title"><%= @item.name %></p>-->
+    <!--</div>-->
+    <!--</div>-->
+    <div class="content">
+      <%= raw @item.content %>
+    </div>
+  </div>
+</div>
