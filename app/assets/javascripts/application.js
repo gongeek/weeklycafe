@@ -12,8 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require t3
+//= require_self
 //= require_tree .
 $(document).ready(function () {
     app.init({
