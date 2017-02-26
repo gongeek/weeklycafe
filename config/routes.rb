@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   post '/site/create', to: 'site#create'
   get '/site', to: 'site#index'
   get '/items/add' => 'welcome#add'
+  get '/site/:id'=>'site#show'
 end
