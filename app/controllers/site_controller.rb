@@ -5,12 +5,13 @@ class SiteController < ApplicationController
 
   def create
     @rss = params[:rss][:rss]
-    require 'feedjira'
-    feed = Feedjira::Feed.fetch_and_parse(@rss)
-    entry=feed.entries.first
-    puts entry.to_yaml
-    new_site=Site.new(name: feed.title, rss: @rss, url: feed.url, recent_item_link: entry.url)
-    new_site.save
+    aFile = File.open(Rails.root.to_s + '/db/temporarySite', "a")
+    if aFile
+      aFile.puts @rss
+    else
+      puts "Unable to open file!"
+    end
+    aFile.close
   end
 
   def show
