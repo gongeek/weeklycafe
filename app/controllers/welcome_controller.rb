@@ -16,6 +16,8 @@ class WelcomeController < ApplicationController
 
   private
   def group (start_day, end_day)
+    start_day = start_day - 1
+    end_day = end_day + 1
     if @user
       good_site_ids=UserSite.where(user_id: @user.id).map { |site| site.site_id }
     else

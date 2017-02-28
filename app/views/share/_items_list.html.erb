@@ -10,7 +10,7 @@
         <a class="item" href="/item/<%= item.id %>">
           <div class="item-left">
             <i class="iconfont">&#xe637;</i>
-            <span>123</span>
+            <span><%= item.access_num||0 %></span>
           </div>
           <div class="item-center">
             <h2 class="site-name"><%= item.site.name %></h2>
