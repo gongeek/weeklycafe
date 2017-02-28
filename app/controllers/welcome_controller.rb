@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
-  @@interval=2
+  @@interval=7
 
   def index
     today=Date.current
