@@ -6,11 +6,11 @@ body {
 
 @font-face {
   font-family: 'iconfont';  /* project id 238639 */
-  src: url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.eot');
-  src: url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.woff') format('woff'),
-  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_8mdqu4lrli7fogvi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.eot');
+  src: url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -260,4 +260,25 @@ body {
   color: $themeColor;
   border: 1px solid $themeColor;
   cursor: pointer;
+}
+
+.all-sites {
+  .site-item {
+    .yes-status {
+      .cancel-btn {
+        display: block;
+      }
+      .add-btn {
+        display: none;
+      }
+    }
+    .no-status {
+      .cancel-btn {
+        display: none;
+      }
+      .add-btn {
+        display: block;
+      }
+    }
+  }
 }

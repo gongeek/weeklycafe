@@ -8,5 +8,7 @@ Rails.application.routes.draw do
   post '/site/create', to: 'site#create'
   get '/site', to: 'site#index'
   get '/items/add' => 'welcome#add'
-  get '/site/:id'=>'site#show'
+  get '/site/:id' => 'site#show'
+  get '/site/sub/:id' => 'site#sub'
+  get '/site/del_sub/:id' => 'site#del_sub'
 end

@@ -1,19 +1,32 @@
 <%= render 'share/menu' %>
-<div class="form">
-  <%= form_for(:rss, url: site_create_path) do |f| %>
-      <%= f.label :rss %>
-      <%= f.text_field :rss, class: 'form-control' %>
+<!--<div class="form">-->
+<!--<%= form_for(:rss, url: site_create_path) do |f| %>-->
+    <!--<%= f.label :rss %>-->
+    <!--<%= f.text_field :rss, class: 'form-control' %>-->
 
-      <%= f.submit "Submit", class: "btn btn-primary" %>
-  <% end %>
-</div>
-
-<div class="items-list">
-  <% @sites.each do |site| %>
-      <a class="item" href="<%= site.url %>">
-        <div class="item-center">
-          <p class="item-name"><%= site.name %></p>
-        </div>
-      </a>
-  <% end %>
+    <!--<%= f.submit "Submit", class: "btn btn-primary" %>-->
+    <!--
+<% end %>-->
+<!--</div>-->
+<div class="all-sites" data-module="all-sites">
+  <div class="search-bar"></div>
+  <ul>
+    <% @sites.each do |site| %>
+        <li class="site-item">
+          <a href="<%= site.url %>">
+            <span class="name"><%= site.name %></span>
+            <% if login? %>
+                <div id="site_sub_<%= site.id %>" class="subs <%= (@user_site_ids.include? site.id) ? 'yes-status' : 'no-status' %>">
+                  <div data-site-id="<%= site.id %>" class="cancel-btn" data-type="cancel-btn">
+                    <i class="iconfont">&#xe6d1;</i>取消
+                  </div>
+                  <div data-site-id="<%= site.id %>" class="add-btn" data-type="add-btn">
+                    <i class="iconfont">&#xe6ce;</i>订阅
+                  </div>
+                </div>
+            <% end %>
+          </a>
+        </li>
+    <% end %>
+  </ul>
 </div>
