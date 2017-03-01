@@ -1,15 +1,23 @@
-<div class="top-bar">
+<div class="top-bar" data-module="top-bar">
   <h1>
     <% if controller_name=='item' %>
         <a href="/" class="back">< 返回</a>
     <% end %>
-    <a href="/" class="logo">WEEKLY <span class="iconfont">&#xe63b;</span></a>
+    <a href="/" class="logo">Weekly Cafe</a>
   </h1>
 
   <% if login? %>
-      <a href="/logout?redirect_url=<%= current_url %>" data-type="github-btn" class="github-btn">
-        <%= @user.username %><i class="iconfont">&#xe608;</i>
-      </a>
+
+      <div class="login-in close" data-type="login-in">
+        <img src="<%= @user.icon || 'http//img.alicdn.com/tps/TB1ld1GNFXXXXXLapXXXXXXXXXX-200-200.png' %>" alt="头像">
+        <i class="iconfont">&#xe6b4;</i>
+        <ul class="dropdown-menu">
+          <li class="username"><a href="javascript:;"><%= @user.username %></a></li>
+          <li class="border"></li>
+          <li><a href="/site">我的订阅</a></li>
+          <li><a href="/logout?redirect_url=<%= current_url %>">登出</a></li>
+        </ul>
+      </div>
   <% else %>
       <a href="/login/github?redirect_url=<%= current_url %>" data-type="github-btn" class="github-btn">
         <i class="iconfont">&#xe69f;</i>登入

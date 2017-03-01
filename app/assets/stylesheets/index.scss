@@ -6,11 +6,11 @@ body {
 
 @font-face {
   font-family: 'iconfont';  /* project id 238639 */
-  src: url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.eot');
-  src: url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.woff') format('woff'),
-  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_q9tfz41fkzeel8fr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_ie35v6ezgu5l8fr.eot');
+  src: url('//at.alicdn.com/t/font_ie35v6ezgu5l8fr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_ie35v6ezgu5l8fr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_ie35v6ezgu5l8fr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_ie35v6ezgu5l8fr.svg#iconfont') format('svg');
 }
 
 .iconfont {
@@ -33,11 +33,11 @@ body {
       bottom: 2px;
     }
     a.logo {
+      position: relative;
       color: #ffffff;
       font-size: 20px;
-      .iconfont {
-        font-size: 24px;
-      }
+      font-weight: 500;
+      top: -4px;
     }
     a.back {
       display: block;
@@ -50,6 +50,99 @@ body {
       color: #FFF;
       font-size: 16px;
       font-weight: normal;
+    }
+  }
+  .login-in {
+    display: inline-block;
+    position: absolute;
+    height: 50px;
+    right: 20px;
+    top: 0;
+    line-height: 50px;
+    padding: 0 10px;
+    cursor: pointer;
+    img {
+      height: 25px;
+      line-height: 1;
+      vertical-align: middle;
+      border-radius: 3px;
+    }
+    .iconfont {
+      margin-left: 5px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.75)
+    }
+    &:hover {
+      .iconfont {
+        color: #fff;
+      }
+    }
+  }
+  .close {
+    .dropdown-menu {
+      display: none;
+    }
+    .iconfont {
+      color: rgba(255, 255, 255, 0.75) !important;
+    }
+  }
+  .open {
+    .dropdown-menu {
+      display: block;
+    }
+    .iconfont {
+      color: #fff !important;
+    }
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -60px;
+    z-index: 1000;
+    float: left;
+    width: 120px;
+    padding: 5px 0 10px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 13px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    a {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: normal;
+      line-height: 1.42857143;
+      color: #444444;
+      white-space: nowrap;
+      &:hover {
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #d9230f;
+      }
+    }
+    .username {
+      a {
+        cursor: text;
+        &:hover {
+          color: #444444;
+          background-color: #FFFFFF;
+        }
+      }
+      font-family: Helvetica, serif;
+    }
+    .border {
+      width: 100%;
+      height: 1px;
+      margin-top: 5px;
+      margin-bottom: 5px;
+      background: #ccc;
     }
   }
   .github-btn {
@@ -85,18 +178,23 @@ body {
         float: left;
         height: 46px;
         line-height: 50px;
-        padding: 0 20px;
+        padding: 0 15px;
         color: $themeColor;
+        .iconfont {
+          margin-right: 4px;
+        }
         &:hover {
-          background-color: #F4FCFD;
-          border-bottom: solid 3px #F4FCFD;
+          background-color: #fbf6f6;
+          border-bottom: solid 3px #fbf6f6;
         }
         a {
-          color: #999;
+          display: inline-block;
+          font-size: 16px;
+          color: #444444;
         }
       }
       li.active {
-        background-color: #F4FCFD;
+        background-color: #fbf6f6;
         border-bottom: solid 3px $themeColor;
       }
     }

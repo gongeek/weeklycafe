@@ -1,9 +1,12 @@
 <div class="menu-bar">
   <div class="menu-bar-content">
-    <ul>
-      <li><%= link_to "HOME",   root_path %></li>
-      <li><%= link_to "SITES",   site_path%></li>
+    <ul class="menu-li">
+      <li class="nav_welcome"><a href="/"><i class="iconfont">&#xe607;</i>Recently</a></li>
+      <li class="nav_site"><a href="/site"><i class="iconfont">&#xe734;</i>Weekly</a></li>
     </ul>
     <div class="add-rss">+ADD WEEKLY</div>
   </div>
+  <script type="text/javascript" charset="utf-8">
+      $('.menu-li .nav_<%=controller_name  %>').addClass('active');
+  </script>
 </div>
