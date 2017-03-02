@@ -1,7 +1,7 @@
 <div class="post-page">
   <div class="left-slide">
     <div class="top">
-      <div class="day-time">
+      <div class="day-time day-time-spe">
         <div class="e-day">
           <i class="month">FEB</i>
           <span class="day">23</span>
@@ -11,12 +11,14 @@
     </div>
 
     <div class="recent-items">
+      <h3>The latest</h3>
       <ul>
         <% @recent_items.each do |item| %>
-            <li><a href="/item/<%= item.id %>"><%= item.name %></a></li>
+            <li><a title="<%= item.name %>" href="/item/<%= item.id %>"><%= item.name %></a></li>
         <% end %>
+        <li><a href="/site/<%= @item.site_id %>">more~</a></li>
       </ul>
-      <a href="/site/<%= @item.site_id %>" style="color: blue;">view all weekly items</a>
+
     </div>
   </div>
   <div class="right-content">

@@ -14,6 +14,10 @@ app.addModule('top-bar', function (context) {
                         $(document).off('click.login')
                     })
                 }
+            } else if (elementType === 'back-btn') {
+                if (history.length > 0) {
+                    history.back();
+                }
             }
         }
 

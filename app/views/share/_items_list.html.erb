@@ -9,17 +9,13 @@
     <% group[:items].each do |item| %>
         <a class="item" href="/item/<%= item.id %>">
           <div class="item-left">
-            <i class="iconfont">&#xe637;</i>
+            <i class="iconfont">&#xe637;</i><br>
             <span><%= item.access_num||0 %></span>
           </div>
           <div class="item-center">
             <h2 class="site-name"><%= item.site.name %></h2>
             <p class="item-name"><%= item.name %></p>
           </div>
-          <!--<div class="item-right">-->
-            <!--<i class="iconfont">&#xe65b;</i>-->
-            <!--<span>12</span>-->
-          <!--</div>-->
         </a>
     <% end %>
 <% end %>

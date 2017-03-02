@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require t3
+//= require jquery-scrolltofixed
 //= require_self
 //= require_tree .
 $(document).ready(function () {
