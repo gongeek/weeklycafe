@@ -1,3 +1,8 @@
 <div class="to-top" data-module="to-top">
   <i class="iconfont" data-type="to-top">&#xe648;</i>
 </div>
+<% if login? %>
+    <script type="text/javascript">
+        var UserInfo = {id:<%= @user.id %>, username: '<=@user.username>'}
+    </script>
+<% end %>

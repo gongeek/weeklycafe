@@ -5,8 +5,10 @@
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
+  <script type="text/javascript" charset="utf-8">
+      var AUTH_TOKEN = <%=  form_authenticity_token.inspect%>;
+  </script>
 </head>
-
 <body>
 <%= render 'share/top_bar' %>
 <%= yield %>

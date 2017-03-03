@@ -1,5 +1,11 @@
 app.addModule('all-sites', function (context) {
     return {
+        init: function () {
+            var jets = new Jets({
+                searchTag: '#jets-search',
+                contentTag: '#jets-content'
+            });
+        },
         onclick: function (event, element, elementType) {
             switch (elementType) {
                 case 'cancel-btn':

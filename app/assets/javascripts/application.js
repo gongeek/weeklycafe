@@ -14,6 +14,9 @@
 //= require jquery_ujs
 //= require t3
 //= require jquery-scrolltofixed
+//= require toastr
+//= require modal
+//= require jets
 //= require_self
 //= require_tree .
 $(document).ready(function () {

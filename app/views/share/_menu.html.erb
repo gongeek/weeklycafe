@@ -4,9 +4,16 @@
       <li class="nav_welcome"><a href="/"><i class="iconfont">&#xe607;</i>Recently</a></li>
       <li class="nav_site"><a href="/site"><i class="iconfont">&#xe734;</i>Weekly</a></li>
     </ul>
-    <div class="add-rss"><a href="javascript:;"><i class="iconfont">&#xe67f;</i>Share Weekly</a></div>
+    <div class="add-rss" data-type="add-rss"><a href="javascript:;"><i class="iconfont">&#xe67f;</i>Share Weekly</a>
+    </div>
   </div>
   <script type="text/javascript" charset="utf-8">
       $('.menu-li .nav_<%=controller_name  %>').addClass('active');
   </script>
+  <div id="modal-add-weekly">
+    <label for="weekly">希望新增收录的 Weekly RSS 地址: <br>
+      <input type="text" name="weekly" placeholder="http://">
+      <span class="input-group-btn enter-del-btn" data-type="enter-del-btn">提交</span>
+    </label>
+  </div>
 </div>
