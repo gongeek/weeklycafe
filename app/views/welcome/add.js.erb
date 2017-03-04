@@ -1,3 +1,6 @@
 (function () {
-  $('.items-list').append('<%=escape_javascript  render 'share/items_list', :items_group => @items_group %>');
+    $('.items-list').append('<%=escape_javascript  render 'share/items_list', :items_group => @items_group %>');
+    if ($('.items-list .item').length >=<%=@total||0 %>) {
+        $('.more-btn').text('没有更多了~').data('no-more', true);
+    }
 }());

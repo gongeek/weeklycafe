@@ -14,6 +14,7 @@ class Item < ApplicationRecord
         temp_hash[:items]=[item]
       else
         if item_day!=tag_day
+          temp_hash[:items].sort! { |a, b| b.access_num.to_i <=>a.access_num.to_i }
           groups.push(temp_hash)
           temp_hash=Hash.new
           tag_day=item_day
@@ -22,6 +23,7 @@ class Item < ApplicationRecord
         else
           temp_hash[:items].push(item)
           if index==items.length-1
+            temp_hash[:items].sort! { |a, b| b.access_num.to_i <=>a.access_num.to_i }
             groups.push(temp_hash)
           end
         end

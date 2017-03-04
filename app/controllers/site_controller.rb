@@ -20,13 +20,18 @@ class SiteController < ApplicationController
 
   def create
     @rss = params[:rss][:rss]
-    aFile = File.open(Rails.root.to_s + '/db/temporarySite', "a")
-    if aFile
-      aFile.puts @rss
+    a_file = File.open(Rails.root.to_s + '/db/temporary_site', "a")
+    if a_file
+      a_file.puts @rss
     else
       puts "Unable to open file!"
     end
-    aFile.close
+    a_file.close
+    respond_to do |format|
+      format.json do
+        render json: {ok: true}
+      end
+    end
   end
 
   def show
