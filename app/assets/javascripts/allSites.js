@@ -18,6 +18,15 @@ app.addModule('all-sites', function (context) {
                     event.stopPropagation();
                     event.preventDefault();
                     break;
+                case 'filter-btn':
+                    var $a = $(event.target),
+                        $as = $a.closest('.filter').find('a');
+                    $as.removeClass('active');
+                    $a.addClass('active');
+                    if ($a.data('filter')) {
+                        $('#jets-content').removeClass().addClass($a.data('filter') + '-filter');
+                    }
+                    break;
             }
         }
 

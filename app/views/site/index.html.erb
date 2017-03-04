@@ -1,23 +1,21 @@
 <%= render 'share/menu' %>
-<!--<div class="form">-->
-<!--<%= form_for(:rss, url: site_create_path) do |f| %>-->
-    <!--<%= f.label :rss %>-->
-    <!--<%= f.text_field :rss, class: 'form-control' %>-->
-
-    <!--<%= f.submit "Submit", class: "btn btn-primary" %>-->
-    <!--
-<% end %>-->
-<!--</div>-->
 <div class="all-sites" data-module="all-sites">
   <div class="function-bar">
     <div class="search"><input type="text" class="search-input" id="jets-search" placeholder="search">
       <i class="iconfont">&#xe601;</i>
     </div>
+    <% if login? %>
+        <div class="filter" data-type="filter-btn">
+          <a href="javascript:;" class="active" data-filter="all">全部的</a>
+          <a href="javascript:;" data-filter="yes">已订阅</a>
+          <a href="javascript:;" data-filter="no">未订阅</a>
+        </div>
+    <% end %>
   </div>
   <div class="ul-wrapper">
     <ul id="jets-content">
       <% @sites.each do |site| %>
-          <li class="site-item">
+          <li class="site-item <%= (@user_site_ids.include? site.id) ? 'yes-item' : 'no-item' %>">
             <a href="/site/<%= site.id %>">
               <span class="name"><%= site.name %></span>
               <% if login? %>

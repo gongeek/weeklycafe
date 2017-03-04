@@ -1,3 +1,8 @@
 (function () {
-    $('#site_sub_' + '<%= @user_site.site_id %>').removeClass('yes-status').addClass('no-status');
+    $('#site_sub_' + '<%= @user_site.site_id %>')
+        .removeClass('yes-status')
+        .addClass('no-status')
+        .closest('.site-item')
+        .removeClass('yes-item')
+        .addClass('no-item');
 }());

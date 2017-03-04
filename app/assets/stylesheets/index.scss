@@ -540,6 +540,7 @@ body {
 
 .search {
   position: relative;
+  display: inline-block;
   top: 7px;
   left: 5px;
   .iconfont {
@@ -656,4 +657,44 @@ body {
   font-size: 12px !important;
   line-height: 16px;
   color: #666;
+}
+
+.filter {
+  display: block;
+  float: right;
+  margin-right: 8px;
+  line-height: 45px;
+  a.active {
+    background: $themeColor;
+  }
+  a {
+    display: inline-block;
+    &:hover {
+      background: $themeColor;
+    }
+    padding: 4px 4px;
+    font-size: 12px;
+    color: #FFFFFF;
+    font-weight: 300;
+    line-height: 1.5;
+    border-radius: 2px;
+  }
+}
+
+.yes-filter {
+  .no-item {
+    display: none;
+  }
+  .yes-item {
+    display: block;
+  }
+}
+
+.no-filter {
+  .no-item {
+    display: block;
+  }
+  .yes-item {
+    display: none;
+  }
 }
