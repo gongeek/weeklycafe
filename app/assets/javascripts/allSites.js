@@ -21,6 +21,9 @@ app.addModule('all-sites', function (context) {
                 case 'filter-btn':
                     var $a = $(event.target),
                         $as = $a.closest('.filter').find('a');
+                    if (!$a.is('a')) {
+                        return;
+                    }
                     $as.removeClass('active');
                     $a.addClass('active');
                     if ($a.data('filter')) {

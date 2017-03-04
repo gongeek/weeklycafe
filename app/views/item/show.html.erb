@@ -16,22 +16,12 @@
         <% @recent_items.each do |item| %>
             <li><a title="<%= item.name %>" href="/item/<%= item.id %>"><%= item.name %></a></li>
         <% end %>
-        <li><a href="/site/<%= @item.site_id %>">more~</a></li>
+        <li><a href="/site/<%= @item.site_id %>">more...</a></li>
       </ul>
 
     </div>
   </div>
   <div class="right-content">
-    <!--<div class="top">-->
-    <!--<div class="weekly-hot">-->
-    <!--<i class="iconfont">&#xe637;</i>-->
-    <!--<span>123</span>-->
-    <!--</div>-->
-    <!--<div class="weekly-title">-->
-    <!--<h2 class="site-name"><%= @item.site.name %></h2>-->
-    <!--<p class="title"><%= @item.name %></p>-->
-    <!--</div>-->
-    <!--</div>-->
     <div class="content">
       <%= raw @item.content %>
     </div>

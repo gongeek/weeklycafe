@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class SiteController < ApplicationController
   def index
     @sites=Site.all
@@ -35,10 +36,9 @@ class SiteController < ApplicationController
   end
 
   def show
-    require 'will_paginate/array'
     id=params[:id]
     @site = Site.find_by_id(id)
-    @items =@site.item.reverse.paginate(page: params[:page] ,per_page:10)
+    @items =@site.item.reverse.paginate(page: params[:page], per_page: 10)
   end
 
 end

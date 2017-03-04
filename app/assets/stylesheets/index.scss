@@ -419,6 +419,7 @@ body {
 }
 
 .to-top {
+  display: none;
   width: 50px;
   text-align: center;
   .iconfont {
@@ -503,6 +504,12 @@ body {
       a {
         display: block;
         color: $themeColor;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      span {
+        line-height: 26px;
       }
       .subs {
         display: none;
@@ -696,5 +703,86 @@ body {
   }
   .yes-item {
     display: none;
+  }
+}
+
+.page-site-show {
+  width: 920px;
+  margin: 0 auto;
+  .site-items {
+    .item {
+      display: block;
+      width: 900px;
+      height: 30px;
+      line-height: 30px;
+      margin: 0 auto;
+      padding: 5px 10px;
+      &:hover {
+        background: rgba(225, 227, 230, 0.4);
+      }
+      a {
+        color: $themeColor;
+        display: inline-block;
+        font-size: 18px;
+      }
+      div {
+        float: right;
+        color: #444444;
+      }
+    }
+  }
+  .site-head {
+    margin: 25px 0 25px 0;
+    padding-left: 10px;
+    h3 {
+      margin: 10px 0;
+      color: #444444;
+      font-size: 20px;
+      font-weight: 500;
+    }
+    .origin-link {
+      display: inline-block;
+      padding: 5px 10px;
+      background: $themeColor;
+      border-radius: 2px;
+      font-size: 14px;
+      a {
+        color: #FFFFFF;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.pagination {
+  margin: 10px 0;
+  ul {
+    padding-left: 10px;
+  }
+  li {
+    display: inline-block;
+    color: #444444;
+  }
+  .active {
+    a {
+      color: $themeColor;
+      text-decoration: underline;
+    }
+  }
+  .disabled {
+    a {
+      color: #444;
+    }
+    a:hover {
+      color: #444;
+      text-decoration: none;
+      cursor: text;
+    }
+  }
+  a:hover {
+    color: $themeColor;
+    text-decoration: underline;
   }
 }

@@ -1,8 +1,18 @@
-<div><%= @site.name %></div>
-<ul >
-  <% @items.each do |item| %>
-      <li><a href="/item/<%= item.id %>"><%= item.name %></a></li>
-      <div> <%= time_interval(item.created_at)%></div>
-  <% end %>
-</ul>
-<%= will_paginate @items%>
+<%= render 'share/menu' %>
+<div class="page-site-show">
+  <div class="site-head">
+    <h3><%= @site.name %></h3>
+    <div class="origin-link">
+      <a href="#">Origin Link</a>
+    </div>
+  </div>
+  <ul class="site-items">
+    <% @items.each do |item| %>
+        <li class="item">
+          <a href="/item/<%= item.id %>"><%= item.name %></a>
+          <div> <%= time_interval(item.created_at) %></div>
+        </li>
+    <% end %>
+  </ul>
+  <%= will_paginate @items %>
+</div>
