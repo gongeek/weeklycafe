@@ -1,3 +1,4 @@
+require 'date'
 module ApplicationHelper
   def login?
     !session[:user_id].blank?
@@ -11,15 +12,28 @@ module ApplicationHelper
     require 'date'
     s = (Time.now.to_i - time.to_i)
     if s == 0
-      return "刚刚"
+      "刚刚"
     elsif s/60== 0
       return (s).to_s +"秒前"
     elsif s/(60*60) == 0
-      return (s/60).to_s  + "分钟前"
+      return (s/60).to_s + "分钟前"
     elsif s/(60*60*24) == 0
-      return (s/(60*60)).to_s  + "小时前"
+      return (s/(60*60)).to_s + "小时前"
     else
-      return (s/(60*60*24)).to_s + "天前"
+      (s/(60*60*24)).to_s + "天前"
     end
   end
+
+  def extract_day_e(day)
+    day.strftime("%B")[0..2].upcase
+  end
+
+  def extract_day_d(day)
+    day.to_s.split('-')[2]
+  end
+
+  def extract_day_z(day)
+    day.month.to_s+'月'+day.day.to_s+'日'
+  end
+
 end

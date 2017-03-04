@@ -454,6 +454,9 @@ body {
       color: $themeColor;
     }
   }
+  a.active {
+    color: $themeColor;
+  }
 }
 
 .left-slide {
@@ -515,17 +518,19 @@ body {
         display: none;
         float: right;
         div {
-          padding: 4px 10px;
+          padding: 4px 4px;
           //background: linear-gradient(#4f5151, #474949 6%, #3f4141);
           //background-repeat: no-repeat;
           background-color: $themeColor;
           color: #FFFFFF;
           font-size: 12px;
           border-radius: 2px;
+          font-weight: 300;
           .iconfont {
             position: relative;
             top: -2px;
             margin-right: 5px;
+            font-size: 10px;
           }
         }
         .add-btn {
@@ -722,7 +727,8 @@ body {
       }
       a {
         color: $themeColor;
-        display: inline-block;
+        display: block;
+        float: left;
         font-size: 18px;
       }
       div {

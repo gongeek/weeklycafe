@@ -3,10 +3,10 @@
     <div class="top">
       <div class="day-time day-time-spe">
         <div class="e-day">
-          <i class="month">FEB</i>
-          <span class="day">23</span>
+          <i class="month"><%= extract_day_e @item.create_day %></i>
+          <span class="day"><%= extract_day_d @item.create_day %></span>
         </div>
-        <div class="s-day">2月23日</div>
+        <div class="s-day"><%= extract_day_z @item.create_day %></div>
       </div>
     </div>
 
@@ -14,7 +14,10 @@
       <h3>The latest</h3>
       <ul>
         <% @recent_items.each do |item| %>
-            <li><a title="<%= item.name %>" href="/item/<%= item.id %>"><%= item.name %></a></li>
+            <li>
+              <a class="<%= (item.id==@item.id)?'active':'' %>"
+                 data-trigger="hover" data-placement="left" data-toggle="popover" data-content="<%= item.name %>" href="/item/<%= item.id %>"><%= item.name %></a>
+            </li>
         <% end %>
         <li><a href="/site/<%= @item.site_id %>">more...</a></li>
       </ul>

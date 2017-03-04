@@ -1,8 +1,8 @@
 <% items_group.each do |group| %>
     <div class="day-time">
       <div class="e-day">
-        <i class="month">FEB</i>
-        <span class="day">23</span>
+        <i class="month"><%= extract_day_e(group[:day]) %></i>
+        <span class="day"><%= extract_day_d(group[:day]) %></span>
       </div>
       <div class="s-day"><%= group[:day] %></div>
     </div>

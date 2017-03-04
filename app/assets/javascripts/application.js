@@ -17,10 +17,10 @@
 //= require toastr
 //= require modal
 //= require jets
+//= require ggpopover
 //= require_self
 //= require_tree .
 $(document).ready(function () {
-    app.init({
-        debug: true
-    });
+    app.init();
+    $('[data-toggle="popover"]').ggpopover({'content-textcolor': "#000000", placement: "top"});
 });

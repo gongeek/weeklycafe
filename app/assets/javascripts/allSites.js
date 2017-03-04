@@ -2,9 +2,13 @@ app.addModule('all-sites', function (context) {
     return {
         init: function () {
             var jets = new Jets({
-                searchTag: '#jets-search',
-                contentTag: '#jets-content'
-            });
+                    searchTag: '#jets-search',
+                    contentTag: '#jets-content'
+                }),
+                targetEl = $('.function-bar').find('a').eq(1)[0];
+            if (window.location.search === '?status=yes') {
+                this.onclick({target: targetEl}, targetEl, 'filter-btn')
+            }
         },
         onclick: function (event, element, elementType) {
             switch (elementType) {
