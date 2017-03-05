@@ -57,6 +57,10 @@ class UserController < ApplicationController
   end
 
   def set_redirect_url
+    if request.port==8779
+      @@github_config[:redirect_url] = 'http://weeklycafe.com/login/github/callback'
+      return
+    end
     if request.port!=80
       @@github_config[:redirect_url] = "#{request.protocol}#{request.host}:#{request.port}#{@@github_config[:redirect_api]}"
     else
