@@ -15,7 +15,10 @@
   <div class="ul-wrapper">
     <ul id="jets-content">
       <% @sites.each do |site| %>
-          <li class="site-item <%= (@user_site_ids.include? site.id) ? 'yes-item' : 'no-item' %>">
+          <li class="site-item
+           <% if login? %>
+           <%= (@user_site_ids.include? site.id) ? 'yes-item' : 'no-item' %>
+           <% end %> ">
             <a href="/site/<%= site.id %>">
               <span class="name"><%= site.name %></span>
               <% if login? %>
