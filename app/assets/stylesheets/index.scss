@@ -792,3 +792,7 @@ body {
     text-decoration: underline;
   }
 }
+
+body > a {
+  display: none;
+}
