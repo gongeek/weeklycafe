@@ -38,7 +38,7 @@ class SiteController < ApplicationController
   def show
     id=params[:id]
     @site = Site.find_by_id(id)
-    @items =@site.item.reverse.paginate(page: params[:page], per_page: 2)
+    @items =@site.item.reverse.paginate(page: params[:page], per_page: 10)
   end
 
   private
