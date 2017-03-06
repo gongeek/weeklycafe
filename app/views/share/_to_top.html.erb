@@ -3,6 +3,6 @@
 </div>
 <% if login? %>
     <script type="text/javascript">
-        var UserInfo = {id:<%= @user.id %>, username: '<=@user.username>'}
+        var UserInfo = {id:<%= @user.id %>, username: '<%=@user.username%>'}
     </script>
 <% end %>
