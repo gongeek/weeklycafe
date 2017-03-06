@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "administrate", "~> 0.3.0"
+gem 'bourbon'
+
 gem 'feedjira'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -32,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'will_paginate',           '3.1.0'
+gem 'will_paginate', '~> 3.0.0'
 gem 'bootstrap-will_paginate', '0.0.10'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
