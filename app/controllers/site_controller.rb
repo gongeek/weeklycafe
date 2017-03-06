@@ -20,8 +20,8 @@ class SiteController < ApplicationController
   end
 
   def create
-    @rss = params[:rss][:rss]
-    a_file = File.open(Rails.root.to_s + '/db/temporary_site', "a")
+    @rss = rss_params[:rss]
+    a_file = File.open(Rails.root.to_s + '/db/temporary_site', 'a')
     if a_file
       a_file.puts @rss
     else
@@ -39,6 +39,11 @@ class SiteController < ApplicationController
     id=params[:id]
     @site = Site.find_by_id(id)
     @items =@site.item.reverse.paginate(page: params[:page], per_page: 2)
+  end
+
+  private
+  def rss_params
+    params.permit(:rss)
   end
 
 end

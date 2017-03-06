@@ -7,7 +7,7 @@ app.addModule('menu-bar', function (context) {
             toastr.warning('请输入合法的http地址!');
             return;
         }
-        $.post('/site/create', {'rss[rss]': inputRss, 'authenticity_token': AUTH_TOKEN}, function (data) {
+        $.post('/site/create', {'rss': inputRss, 'authenticity_token': AUTH_TOKEN}, function (data) {
             if (data && data.ok === true) {
                 toastr.success('提交成功，待审核！');
                 $.closeModal('#modal-add-weekly');
