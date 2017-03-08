@@ -512,6 +512,11 @@ body {
         }
       }
       span {
+        max-width: 200px;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
         line-height: 26px;
       }
       .subs {
