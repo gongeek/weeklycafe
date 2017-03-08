@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225062502) do
+ActiveRecord::Schema.define(version: 20170308024105) do
 
   create_table "items", force: :cascade do |t|
     t.string   "name"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170225062502) do
     t.datetime "updated_at"
     t.string   "recent_item_link"
     t.index ["rss"], name: "index_sites_on_rss", unique: true
+    t.index ["url"], name: "index_sites_on_url", unique: true
   end
 
   create_table "user_sites", force: :cascade do |t|
