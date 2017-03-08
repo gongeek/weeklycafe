@@ -3,13 +3,18 @@ namespace :update do
   task :items => :environment do
     require 'feedjira'
     Site.all.each do |site|
-      rss_url =URI.parse(URI.encode(site.rss.strip))
-      feed = Feedjira::Feed.fetch_and_parse(rss_url)
-      entry=feed.entries.first
-      unless entry.url.eql? (site.recent_item_link)
-        site.update(recent_item_link: entry.url)
-        new_item=Item.new(name: entry.title, content: entry.content||entry.summary, link: entry.url, site_id: site.id) #content
-        new_item.save
+      begin
+        rss_url =URI.parse(URI.encode(site.rss.strip))
+        feed = Feedjira::Feed.fetch_and_parse(rss_url)
+        entry=feed.entries.first
+        unless entry.url.eql? (site.recent_item_link)
+          site.update(recent_item_link: entry.url)
+          new_item=Item.new(name: entry.title, content: entry.content||entry.summary, link: entry.url, site_id: site.id) #content
+          new_item.save
+        end
+      rescue
+        puts "ERROR:#{rss_url}"
+        next
       end
     end
   end
