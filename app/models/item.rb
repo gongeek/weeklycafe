@@ -12,6 +12,9 @@ class Item < ApplicationRecord
         tag_day=item_day
         temp_hash[:day]=tag_day
         temp_hash[:items]=[item]
+        if items.length == 1
+          groups.push(temp_hash)
+        end
       else
         if item_day!=tag_day
           temp_hash[:items].sort! { |a, b| b.access_num.to_i <=>a.access_num.to_i }
