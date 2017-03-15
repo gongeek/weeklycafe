@@ -20,19 +20,28 @@ class SiteController < ApplicationController
   end
 
   def create
-    @rss = rss_params[:rss]
-    a_file = File.open(Rails.root.to_s + '/db/temporary_site', 'a')
-    if a_file
-      a_file.puts @rss
+    if login?
+      @rss = rss_params[:rss]
+      a_file = File.open(Rails.root.to_s + '/db/temporary_site', 'a')
+      if a_file
+        a_file.puts @rss
+      else
+        puts "Unable to open file!"
+      end
+      a_file.close
+      respond_to do |format|
+        format.json do
+          render json: {ok: true}
+        end
+      end
     else
-      puts "Unable to open file!"
-    end
-    a_file.close
-    respond_to do |format|
-      format.json do
-        render json: {ok: true}
+      respond_to do |format|
+        format.json do
+          render json: {ok: false}
+        end
       end
     end
+
   end
 
   def show
