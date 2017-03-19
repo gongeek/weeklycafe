@@ -12,15 +12,15 @@ module ApplicationHelper
     require 'date'
     s = (Time.now.to_i - time.to_i)
     if s == 0
-      "刚刚"
+      "just now"
     elsif s/60== 0
-      return (s).to_s +"秒前"
+      return (s).to_s +" seconds ago"
     elsif s/(60*60) == 0
-      return (s/60).to_s + "分钟前"
+      return (s/60).to_s + " minutes ago"
     elsif s/(60*60*24) == 0
-      return (s/(60*60)).to_s + "小时前"
+      return (s/(60*60)).to_s + " hour ago"
     else
-      (s/(60*60*24)).to_s + "天前"
+      (s/(60*60*24)).to_s + " days ago"
     end
   end
 

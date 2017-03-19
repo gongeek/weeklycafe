@@ -4,12 +4,12 @@ app.addModule('menu-bar', function (context) {
 
     function dealInput(inputRss) {
         if (!reg.test(inputRss)) {
-            toastr.warning('请输入合法的http地址!');
+            toastr.warning('Please enter a valid  address!');
             return;
         }
         $.post('/site/create', {'rss': inputRss, 'authenticity_token': AUTH_TOKEN}, function (data) {
             if (data && data.ok === true) {
-                toastr.success('提交成功，待审核！');
+                toastr.success('Submission successful, pending review！');
                 $.closeModal('#modal-add-weekly');
             } else if (data && data.ok === false) {
                 toastr.warn(data.msg)
@@ -43,7 +43,7 @@ app.addModule('menu-bar', function (context) {
             var $el = $(element);
             if (elementType === 'add-rss') {
                 if (typeof UserInfo === 'undefined') {
-                    toastr.warning('请先登入!');
+                    toastr.warning('Please login first!');
                     return;
                 }
                 $.showModal({
