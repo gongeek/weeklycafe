@@ -1,7 +1,7 @@
 <div class="top-bar" data-module="top-bar">
   <h1>
     <% if controller_name=='item'||controller_name=='site' %>
-        <a href="javascript:;" data-type="back-btn" class="back"><i class="iconfont">&#xe602;</i> back</a>
+        <a href="javascript:;" data-type="back-btn" class="back"><i class="iconfont">&#xe602;</i>Back</a>
     <% end %>
     <a href="/" class="logo">Weekly Cafe</a>
   </h1>
@@ -14,13 +14,13 @@
         <ul class="dropdown-menu">
           <li class="username"><a href="javascript:;"><%= @user.username %></a></li>
           <li class="border"></li>
-          <li><a href="/site?status=yes">feeds</a></li>
-          <li><a href="/logout?redirect_url=<%= current_url %>">logout</a></li>
+          <li><a href="/site?status=yes">Feeds</a></li>
+          <li><a href="/logout?redirect_url=<%= current_url %>">Logout</a></li>
         </ul>
       </div>
   <% else %>
       <a href="/login/github?redirect_url=<%= current_url %>" data-type="github-btn" class="github-btn">
-        <i class="iconfont">&#xe69f;</i>login
+        <i class="iconfont">&#xe69f;</i>Login
       </a>
   <% end %>
 
