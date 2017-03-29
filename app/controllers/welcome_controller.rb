@@ -25,7 +25,7 @@ class WelcomeController < ApplicationController
       good_site_ids=Site.all.map { |site| site.id }
     end
     items=Item.includes(:site).where(:created_at => (start_day..end_day))
-    @total=(items.reject { |item| !(good_site_ids.include? item.site_id) }).length
+    @total=(Item.all.reject { |item| !(good_site_ids.include? item.site_id) }).length
     @items_group=Item.group_by_day(items, good_site_ids)
   end
 
