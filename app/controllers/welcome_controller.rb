@@ -10,7 +10,7 @@ class WelcomeController < ApplicationController
 
   def add
     page=params[:page]
-    end_day=Date.current-@@interval*(page.to_i-1)
+    end_day=Date.current-@@interval*(page.to_i-1)-1
     start_day=end_day-@@interval
     group start_day, end_day
   end

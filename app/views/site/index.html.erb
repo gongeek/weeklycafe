@@ -6,9 +6,9 @@
     </div>
     <% if login? %>
         <div class="filter" data-type="filter-btn">
-          <a href="javascript:;" class="active" data-filter="all">全部的</a>
-          <a href="javascript:;" data-filter="yes">已订阅</a>
-          <a href="javascript:;" data-filter="no">未订阅</a>
+          <a href="javascript:;" class="active" data-filter="all">All Site</a>
+          <a href="javascript:;" data-filter="yes">Followed</a>
+          <a href="javascript:;" data-filter="no">Unfollow</a>
         </div>
     <% end %>
   </div>
@@ -24,10 +24,10 @@
               <% if login? %>
                   <div id="site_sub_<%= site.id %>" class="subs <%= (@user_site_ids.include? site.id) ? 'yes-status' : 'no-status' %>">
                     <div data-site-id="<%= site.id %>" class="cancel-btn" data-type="cancel-btn">
-                      <i class="iconfont">&#xe6d1;</i>取消
+                      <i class="iconfont">&#xe6d1;</i>Unfollow
                     </div>
                     <div data-site-id="<%= site.id %>" class="add-btn" data-type="add-btn">
-                      <i class="iconfont">&#xe6ce;</i>订阅
+                      <i class="iconfont">&#xe6ce;</i>Follow
                     </div>
                   </div>
               <% end %>

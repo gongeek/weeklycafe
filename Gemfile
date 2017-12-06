@@ -37,6 +37,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'will_paginate', '~> 3.0.0'
 gem 'bootstrap-will_paginate', '0.0.10'
+gem 'rb-readline'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
